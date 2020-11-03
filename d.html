@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>2GUD</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+
+<style>
+    .container1 {
+ position: relative;
+ text-align: center;
+ color: rgb(241, 241, 241);
+ }
+
+ .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+ .centered {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+
+
+
+ }
+/* css for typehead dropdown --- start*/
+.tt-query {
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+color: #999
+}
+.tt-menu { /* used to be tt-dropdown-menu in older versions /
+min-width: 170px;
+margin-top: 4px;
+padding: 4px 0;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+-moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.tt-suggestion {
+padding: 3px 20px;
+line-height: 24px;
+}
+.tt-suggestion.tt-cursor,.tt-suggestion:hover {
+color: #fff;
+background-color: #0097cf;
+}
+.tt-suggestion p {
+margin: 0;
+}
+/ css for typehead dropdown --- end*/
+</style>
+
+</head>
+<body class="bg-info">
+    <div class="container-fluid bg-dark">
+ <div class="container">
+ <div class="row text-light pt-2 pb-2">
+ <div class="col-md-5"><i class="fa fa-envelope-o" ariahidden="true"></i> vikassinghthainua21@gmail.com</div>
+ <div class="col-md-3">
+
+ </div>
+ <div class="col-md-2"><i class="fa fa-user-o" ariahidden="true"></i> Account</div>
+ <div class="col-md-2"><i class="fa fa-cart-plus" ariahidden="true"></i> My Cart - ₹0.00</div>
+ </div>
+ </div>
+</div>
+<div class="container-fluid bg-black">
+ <nav class="navbar navbar-expand-sm bg-light">
+ <a class="navbar-brand" href="#">2GUD</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" datatarget="#navbarSupportedContent" aria-controls="navbarSupportedContent" ariaexpanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <ul class="navbar-nav mr-auto">
+ <li class="nav-item active">
+ <a class="nav-link" href="page2online.html">HOME <span class="sronly">(current)</span></a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#">MEN</a>
+ </li>
+ <li class="nav-item">
+  <a class="nav-link" href="tay.html">BOYS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="girls.html">GIRLS</a>
+    </li>
+ <li class="nav-item dropdown">
+ <a class="nav-link dropdowntoggle" href="#" id="navbarDropdown" role="button" datatoggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ WOMEN
+ </a>
+ <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+ <a class="dropdown-item" href="#">mobile</a>
+ <a class="dropdown-item" href="#">camera</a>
+ <div class="dropdown-divider">laptops</div>
+ <a class="dropdown-item" href="#">headphones</a>
+ </div>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link disabled" href="#">OFFERS</a>
+ </li>
+ </ul>
+ <form class="form-inline my-2 my-lg-0">
+ <input class="form-control mr-sm2" type="search" placeholder="Search" aria-label="Search">
+ <button class="btn btn-outline-success my-2 my-sm0" type="submit">Search</button>
+ </form>
+ </div>
+</nav>
+</div>
+<h1>Check for Delivery</h1>
+<div id="the-basics">
+<input class="typeahead" type="text" placeholder="States of USA">
+</div>
+
+<script>
+var substringMatcher = function(strs) {
+return function findMatches(q, cb) {
+var matches, substringRegex;
+
+// an array that will be populated with substring matches
+matches = [];
+
+// regex used to determine if a string contains the substring `q`
+substrRegex = new RegExp(q, 'i');
+
+// iterate through the pool of strings and for any string that
+// contains the substring `q`, add it to the `matches` array
+$.each(strs, function(i, str) {
+if (substrRegex.test(str)) {
+matches.push(str);
+}
+});
+
+cb(matches);
+};
+};
+
+var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+];
+
+$('#the-basics .typeahead').typeahead({
+hint: true,
+highlight: true,
+minLength: 1
+},
+{
+name: 'states',
+source: substringMatcher(states)
+});</script>
+<nav aria-label="Page navigation example">
+ <ul class="pagination justify-content-end">
+ <li class="page-item disabled">
+ <a class="page-link" href="#" tabindex="-1">Previous</a>
+ </li>
+ <li class="page-item"><a class="pagelink" href="Index.html">1</a></li>
+ <li class="page-item"><a class="page-link" href="page2online.html">2</a></li>
+ <li class="page-item"><a class="pagelink" href="page3online.html">3</a></li>
+ <li class="page-item"><a class="pagelink" href="tay.html">4</a></li>
+ <li class="page-item"><a class="pagelink" href="girls.html">5</a></li>
+ <li class="page-item"><a class="pagelink" href="d.html">6</a></li>
+ <li class="page-item">
+ <a class="page-link" href="#">Next</a>
+ </li>
+ </ul>
+ </nav>
+<footer>
+ <div class="container-fluid pt-5 pb-5 bg-dark text-light">
+ <div class="container">
+ <div class="row">
+
+ <div class="col-md-3 pl-4">
+ <div class="row">
+ <h5>About</h5>
+ </div>
+ <div class="row mb-4">
+ <div class="underline bg-light" style="width: 50px;"></div>
+ </div>
+ <div class="row">
+ <p>I made this website just to learn bootstrap and get ful
+l marks hahahaha.PEACE</p>
+ </div>
+ </div>
+
+ <div class="col-md-3">
+ <div class="row">
+ <h5>Tags</h5>
+ </div>
+ <div class="row mb-4">
+ <div class="underline bg-light" style="width: 50px;"></div>
+ </div>
+ <button class="btn btn-outline-light">ELECTRONICS</button>
+ <button class="btn btn-outline-light">Dress</button>
+ <button class="btn btn-outline-light">Fashion</button>
+  <button class="btn btn-outline-light">CAMERA</button>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</html>
+</body>
+</html>
